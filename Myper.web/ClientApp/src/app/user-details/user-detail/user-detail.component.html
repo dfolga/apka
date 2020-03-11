@@ -1,0 +1,71 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="UserId" [value]="service.formData.UserId">
+    <div class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-user-ninja"></i>
+              </div>
+          </div>
+          <input
+          name="FirstName"
+          #FirstName="ngModel"
+          [(ngModel)]="service.formData.FirstName"
+          class="form-control"
+          placeholder="User First Name" required maxlength="5" minlength="5"
+        />
+      </div> 
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-ninja"></i>
+            </div>
+        </div>
+        <input
+        name="LastName"
+        #LastName="ngModel"
+        [(ngModel)]="service.formData.LastName"
+        class="form-control"
+        placeholder="User Last Name" required maxlength="5" minlength="5"
+      />
+    </div> 
+</div>
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-at"></i>
+            </div>
+        </div>
+        <input
+        name="EmailID"
+        #EmailID="ngModel"
+        [(ngModel)]="service.formData.EmailID"
+        class="form-control"
+        placeholder="User E-mail" required maxlength="5" minlength="5"
+      />
+    </div> 
+</div>
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-key"></i>
+            </div>
+        </div>
+        <input
+        name="Password"
+        type="password"
+        #Password="ngModel"
+        [(ngModel)]="service.formData.Password"
+        class="form-control "
+        placeholder="User Password" required maxlength="3" minlength="3"
+      />
+    </div> 
+</div>
+<div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-user-plus"></i>Sign Up</button>
+</div>
+</form>
